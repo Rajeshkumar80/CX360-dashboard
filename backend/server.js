@@ -4,6 +4,8 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
 
 import config from './config/env.js';
 import connectDB from './config/db.js';
@@ -19,6 +21,8 @@ import { startSLAChecker } from './jobs/slaChecker.js';
 
 const app = express();
 const httpServer = createServer(app);
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const frontendDistPath = resolve(__dirname, '../frontend/dist');
 const io = new Server(httpServer, {
   cors: { origin: config.frontendUrl, methods: ['GET', 'POST'] },
 });
@@ -49,9 +53,20 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/webhook', webhookRoutes);
 app.use('/api/settings', settingsRoutes);
 
+// Serve frontend build when deployed as a single service
+app.use(express.static(frontendDistPath));
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', portal: 'CX360', version: '1.0.0', time: new Date().toISOString() });
+});
+
+// SPA fallback for React Router
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ success: false, error: 'Route not found' });
+  }
+  return res.sendFile(resolve(frontendDistPath, 'index.html'));
 });
 
 // Error handler
