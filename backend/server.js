@@ -4,6 +4,8 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
 import config from './config/env.js';
 import connectDB from './config/db.js';
@@ -16,6 +18,9 @@ import webhookRoutes from './routes/webhook.routes.js';
 import settingsRoutes from './routes/settings.routes.js';
 import { startEmailPoller } from './jobs/emailPoller.js';
 import { startSLAChecker } from './jobs/slaChecker.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 const httpServer = createServer(app);
@@ -52,6 +57,15 @@ app.use('/api/settings', settingsRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', portal: 'CX360', version: '1.0.0', time: new Date().toISOString() });
+});
+
+// Serve frontend static files
+const frontendDist = join(__dirname, '../frontend/dist');
+app.use(express.static(frontendDist));
+
+// Catch-all: serve index.html for client-side routing
+app.get('*', (req, res) => {
+  res.sendFile(join(frontendDist, 'index.html'));
 });
 
 // Error handler
