@@ -33,7 +33,7 @@ const Home = () => {
       <div className="flex-1 flex flex-col items-center justify-center px-8 py-20 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent-muted text-accent rounded-full text-sm font-medium mb-6 animate-pulse-orange">
           <Zap className="w-4 h-4" />
-          Powered by Claude AI — Anthropic
+          CX360 v1.0.0
         </div>
 
         <h1 className="text-5xl md:text-7xl font-extrabold text-text-primary leading-tight max-w-4xl mb-4">

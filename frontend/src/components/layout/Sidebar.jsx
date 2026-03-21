@@ -50,8 +50,7 @@ const Sidebar = () => {
       {/* Branding */}
       <div className="absolute bottom-0 left-0 w-56 p-4 border-t border-brand-400/10">
         <p className="text-[10px] text-text-muted text-center leading-relaxed">
-          CX360 v1.0.0<br />
-          <span className="text-accent/60">Powered by Claude AI</span>
+          CX360 v1.0.0
         </p>
       </div>
     </aside>
