@@ -1,4 +1,9 @@
 {
+  "name": "cx360-dashboard",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd backend && node server.js"
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
     "jsonwebtoken": "^9.0.3"
