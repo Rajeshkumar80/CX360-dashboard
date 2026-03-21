@@ -1,0 +1,69 @@
+7:23:03 pm [vite] warning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.
+`optimizeDeps.rollupOptions` / `ssr.optimizeDeps.rollupOptions` is deprecated. Use `optimizeDeps.rolldownOptions` instead. Note that this option may be set by a plugin. Set VITE_DEPRECATION_TRACE=1 to see where it is called.
+[vite:react-babel] We recommend switching to `@vitejs/plugin-react-oxc` for improved performance. More information at https://vite.dev/rolldown
+Warning: Invalid input options (1 issue found)
+- For the "jsx". Invalid key: Expected never but received "jsx". 
+Warning: Invalid input options (1 issue found)
+- For the "jsx". Invalid key: Expected never but received "jsx". 
+7:23:16 pm [vite] Internal server error: Failed to resolve import "react-is" from "node_modules/.vite/deps/recharts.js?v=522f3108". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/.vite/deps/recharts.js?v=522f3108:5:28
+  3  |  import { t as require_react_dom } from "./react-dom.js";
+  4  |  import { clsx } from "./clsx.js";
+  5  |  import { isFragment } from "react-is";
+     |                              ^
+  6  |  //#region node_modules/recharts/es6/util/excludeEventProps.js
+  7  |  var import_react = /* @__PURE__ */ __toESM(require_react());
+      at TransformPluginContext._formatLog (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30234:39)
+      at TransformPluginContext.error (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30231:14)
+      at normalizeUrl (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27519:18)
+      at async file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27582:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27550:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30023:14)
+      at async loadAndTransform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:24152:26)
+7:23:16 pm [vite] (client) Pre-transform error: Failed to resolve import "react-is" from "node_modules/.vite/deps/recharts.js?v=522f3108". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/.vite/deps/recharts.js?v=522f3108:5:28
+  3  |  import { t as require_react_dom } from "./react-dom.js";
+  4  |  import { clsx } from "./clsx.js";
+  5  |  import { isFragment } from "react-is";
+     |                              ^
+  6  |  //#region node_modules/recharts/es6/util/excludeEventProps.js
+  7  |  var import_react = /* @__PURE__ */ __toESM(require_react());
+7:23:32 pm [vite] Internal server error: Failed to resolve import "react-is" from "node_modules/.vite/deps/recharts.js?v=522f3108". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/.vite/deps/recharts.js?v=522f3108:5:28
+  3  |  import { t as require_react_dom } from "./react-dom.js";
+  4  |  import { clsx } from "./clsx.js";
+  5  |  import { isFragment } from "react-is";
+     |                              ^
+  6  |  //#region node_modules/recharts/es6/util/excludeEventProps.js
+  7  |  var import_react = /* @__PURE__ */ __toESM(require_react());
+      at TransformPluginContext._formatLog (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30234:39)
+      at TransformPluginContext.error (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30231:14)
+      at normalizeUrl (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27519:18)
+      at async file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27582:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27550:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30023:14)
+      at async loadAndTransform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:24152:26)
+      at async viteTransformMiddleware (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:24961:20)
+7:24:36 pm [vite] Internal server error: Failed to resolve import "react-is" from "node_modules/.vite/deps/recharts.js?v=522f3108". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/.vite/deps/recharts.js?v=522f3108:5:28
+  3  |  import { t as require_react_dom } from "./react-dom.js";
+  4  |  import { clsx } from "./clsx.js";
+  5  |  import { isFragment } from "react-is";
+     |                              ^
+  6  |  //#region node_modules/recharts/es6/util/excludeEventProps.js
+  7  |  var import_react = /* @__PURE__ */ __toESM(require_react());
+      at TransformPluginContext._formatLog (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30234:39)
+      at TransformPluginContext.error (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30231:14)
+      at normalizeUrl (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27519:18)
+      at async file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27582:30
+      at async Promise.all (index 4)
+      at async TransformPluginContext.transform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:27550:4)
+      at async EnvironmentPluginContainer.transform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:30023:14)
+      at async loadAndTransform (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:24152:26)
+      at async viteTransformMiddleware (file:///C:/Users/rajes/Downloads/uc3d-dashboard/frontend/node_modules/vite/dist/node/chunks/node.js:24961:20) (x2)

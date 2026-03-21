@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

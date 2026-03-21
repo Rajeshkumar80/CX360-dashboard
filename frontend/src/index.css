@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-brand-700 border border-brand-400/30 rounded-xl p-6;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  .card-hover {
+    @apply card hover:border-accent/30;
+  }
+  .btn-primary {
+    @apply px-6 py-2.5 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition-all duration-200;
+  }
+  .btn-secondary {
+    @apply px-6 py-2.5 bg-brand-500 hover:bg-brand-400 text-text-primary font-semibold rounded-lg border border-brand-300/30 transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply px-6 py-2.5 bg-transparent hover:bg-brand-500 text-text-secondary hover:text-text-primary font-medium rounded-lg border border-brand-400/30 transition-all duration-200;
+  }
+  .btn-danger {
+    @apply px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-brand-800 border border-brand-400/30 rounded-lg text-text-primary placeholder-text-muted transition-all duration-200;
+  }
+  .input-field:focus {
+    outline: none !important;
+    border-color: #FF6600 !important;
+    box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.3) !important;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold uppercase tracking-wide;
+  }
+  .toggle-switch {
+    @apply relative inline-flex h-6 w-11 items-center rounded-full cursor-pointer transition-colors duration-200;
+  }
+  .toggle-switch-dot {
+    @apply inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-200;
+  }
+}
+
+/* ===== GLOBAL: Remove ALL blue highlights ===== */
+*, *:focus, *:focus-visible {
+  outline: none !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #FF6600 !important;
+  box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.3) !important;
+}
+
+button:focus {
+  box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.4) !important;
+}
+
+/* Remove browser default blue selection */
+::selection {
+  background-color: rgba(255, 102, 0, 0.3);
+  color: white;
+}
+
+/* =======================================
+   LIGHT MODE OVERRIDES
+   ======================================= */
+.light body,
+.light {
+  background-color: #f5f5f5 !important;
+  color: #111111 !important;
+}
+
+.light .bg-brand-900 { background-color: #f5f5f5 !important; }
+.light .bg-brand-800 { background-color: #ffffff !important; }
+.light .bg-brand-700 { background-color: #ffffff !important; }
+.light .bg-brand-600 { background-color: #f0f0f0 !important; }
+.light .bg-brand-500 { background-color: #e5e5e5 !important; }
+.light .bg-brand-400 { background-color: #d4d4d4 !important; }
+
+.light .text-text-primary { color: #111111 !important; }
+.light .text-text-secondary { color: #555555 !important; }
+.light .text-text-muted { color: #888888 !important; }
+
+.light .placeholder-text-muted::placeholder { color: #aaaaaa !important; }
+
+.light .border-brand-400\/20 { border-color: rgba(200, 200, 200, 0.5) !important; }
+.light .border-brand-400\/30 { border-color: rgba(200, 200, 200, 0.6) !important; }
+.light .border-brand-400\/10 { border-color: rgba(200, 200, 200, 0.3) !important; }
+.light .border-brand-300\/30 { border-color: rgba(180, 180, 180, 0.5) !important; }
+
+.light .card,
+.light .card-hover {
+  background-color: #ffffff !important;
+  border-color: rgba(200, 200, 200, 0.6) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+.light .card-hover:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .input-field {
+  background-color: #f5f5f5 !important;
+  border-color: rgba(200, 200, 200, 0.7) !important;
+  color: #111111 !important;
+}
+.light .input-field:focus {
+  border-color: #ff6600 !important;
+}
+
+.light .btn-secondary {
+  background-color: #f0f0f0 !important;
+  border-color: rgba(200, 200, 200, 0.6) !important;
+  color: #111111 !important;
+}
+.light .btn-ghost {
+  border-color: rgba(200, 200, 200, 0.6) !important;
+  color: #555555 !important;
+}
+.light .btn-ghost:hover {
+  background-color: #f0f0f0 !important;
+  color: #111111 !important;
+}
+
+.light .hover\:bg-brand-600:hover { background-color: #f0f0f0 !important; }
+.light .hover\:bg-brand-700:hover { background-color: #e8e8e8 !important; }
+.light .hover\:bg-brand-500:hover { background-color: #e5e5e5 !important; }
+.light .hover\:bg-brand-400:hover { background-color: #d4d4d4 !important; }
+.light .hover\:bg-dark-700\/50:hover { background-color: #f0f0f0 !important; }
+
+.light .hover\:text-text-primary:hover { color: #111111 !important; }
+
+.light .bg-accent-muted { background-color: rgba(255, 102, 0, 0.08) !important; }
+
+.light .hover\:bg-brand-600\/30:hover { background-color: rgba(240, 240, 240, 0.8) !important; }
+
+.light ::-webkit-scrollbar-track { background: #f0f0f0 !important; }
+.light ::-webkit-scrollbar-thumb { background: #ccc !important; }
+
+/* ===== Scrollbar (dark) ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8c00;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes flashOrange {
+  0%, 100% { border-color: rgba(255, 102, 0, 0.3); }
+  50% { border-color: rgba(255, 102, 0, 0.8); box-shadow: 0 0 20px rgba(255, 102, 0, 0.2); }
+}
+.animate-flash-orange {
+  animation: flashOrange 1.5s ease-in-out 2;
+}
+
+@keyframes pulse-orange {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.animate-pulse-orange {
+  animation: pulse-orange 2s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out;
+}
+
+/* Severity gauge */
+.severity-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #22c55e 0%, #eab308 40%, #ff6600 70%, #ef4444 100%);
+}
