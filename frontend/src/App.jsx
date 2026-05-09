@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from './hooks/useAuth';
 import { ThemeProvider } from './hooks/useTheme';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
+import LearnMore from './pages/LearnMore';
 import Login from './pages/Login';
 import AutomatedInbox from './pages/AutomatedInbox';
 import ManualEntry from './pages/ManualEntry';
@@ -24,6 +25,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={user ? <Navigate to={isAdmin ? '/admin/inbox' : '/manager/analytics'} /> : <Home />} />
+      <Route path="/learn-more" element={<LearnMore />} />
       <Route path="/login" element={user ? <Navigate to={isAdmin ? '/admin/inbox' : '/manager/analytics'} /> : <Login />} />
 
       {/* Admin routes */}

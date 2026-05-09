@@ -46,7 +46,7 @@ export async function classifyComplaint(data, io) {
 
   let aiResult = { ...FALLBACK };
 
-  if (config.anthropicKey) {
+  if (config.openrouterKey) {
     try {
       const userPrompt = `Classify this banking complaint and generate the best agent reply.
 
@@ -83,27 +83,30 @@ Regulatory Flag Rules:
 - PCI-DSS: mentions card data, CVV, card number exposed, payment breach
 - FDIC: mentions FDIC, US federal banking, insured deposits`;
 
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': config.anthropicKey,
-          'anthropic-version': '2023-06-01',
+          'Authorization': `Bearer ${config.openrouterKey}`,
+          'HTTP-Referer': 'http://localhost:5000',
+          'X-Title': 'CX360 Complaint System',
         },
         body: JSON.stringify({
-          model: config.claudeModel,
+          model: config.aiModel,
           max_tokens: 1500,
-          system: SYSTEM_PROMPT,
-          messages: [{ role: 'user', content: userPrompt }],
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            { role: 'user', content: userPrompt },
+          ],
         }),
       });
 
       const apiData = await response.json();
-      const text = apiData.content?.[0]?.text || '';
+      const text = apiData.choices?.[0]?.message?.content || '';
       const cleaned = text.replace(/```json?\s*/g, '').replace(/```/g, '').trim();
       aiResult = JSON.parse(cleaned);
     } catch (err) {
-      console.error('Claude API error:', err.message);
+      console.error('OpenRouter API error:', err.message);
     }
   } else {
     // Smart mock fallback with banking categories

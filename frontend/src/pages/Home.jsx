@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const features = [
-    { icon: Zap, title: 'AI Classification', desc: 'Auto-classify complaints by category, sentiment, priority & severity using Claude AI' },
+    { icon: Zap, title: 'AI Classification', desc: 'Auto-classify complaints by category, sentiment, priority & severity using AI' },
     { icon: Globe, title: '6-Channel Integration', desc: 'Email, WhatsApp, SMS, Live Chat, Web Form & Manual — all in one unified inbox' },
     { icon: Landmark, title: 'Banking Compliance', desc: 'RBI, FDIC & PCI-DSS regulatory flag detection with automatic escalation rules' },
     { icon: BarChart3, title: 'Real-time Analytics', desc: 'SLA tracking, escalation monitoring, and 30-day trend analysis with live dashboards' },
@@ -53,7 +53,7 @@ const Home = () => {
           <button onClick={() => navigate('/login')} className="btn-primary text-lg px-8 py-3.5 shadow-lg shadow-accent/20">
             Get Started
           </button>
-          <button className="btn-ghost text-lg px-8 py-3.5">
+          <button onClick={() => navigate('/learn-more')} className="btn-ghost text-lg px-8 py-3.5">
             Learn More
           </button>
         </div>

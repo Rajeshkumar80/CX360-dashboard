@@ -93,7 +93,7 @@ async function start() {
     console.log(`   Portal: CX360 — Intelligent Complaint Resolution. Full Circle.`);
     console.log(`   Mode: ${config.nodeEnv}`);
     console.log(`   DB: ${dbConnected ? 'MongoDB Connected' : 'Mock Mode (no DB)'}`);
-    console.log(`   AI: ${config.anthropicKey ? 'Claude API Active' : 'Mock AI Fallback'}`);
+    console.log(`   AI: ${config.openrouterKey ? 'OpenRouter AI Active' : 'Mock AI Fallback'}`);
     console.log(`   Frontend: ${config.frontendUrl}\n`);
   });
 }

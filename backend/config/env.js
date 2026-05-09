@@ -11,8 +11,8 @@ export default {
   mongoUri: process.env.MONGODB_URI,
   jwtSecret: process.env.JWT_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '8h',
-  anthropicKey: process.env.ANTHROPIC_API_KEY,
-  claudeModel: process.env.CLAUDE_MODEL || 'claude-sonnet-4-20250514',
+  openrouterKey: process.env.OPENROUTER_API_KEY,
+  aiModel: process.env.AI_MODEL || 'anthropic/claude-sonnet-4-20250514',
   encryptionKey: process.env.ENCRYPTION_KEY || 'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2',
   email: {
     enabled: process.env.EMAIL_ENABLED === 'true',
